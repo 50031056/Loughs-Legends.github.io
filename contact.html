@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loughs & Legends - Contact</title>
+<link rel="stylesheet" href="style.css?v=1.3">
+<link rel="icon" type="image/x-icon" href="Images/Logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <a href="index.html">
+        <img src="Images/Logo.png" class="logo-img" width="150">
+    </a>
+
+    <div class="logo">Loughs & Legends</div>
+
+<button class="burger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+</button>
+
+     <!-- DESKTOP ADMIN -->
+  <div class="admin-desktop">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Itineraries</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+
+    <!-- MOBILE ADMIN -->
+   <div class="mobile-admin">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</nav>
+
+<!-- OVERLAY -->
+<div id="navOverlay" onclick="toggleMenu()"></div>
+
+<main>
+
+<div class="contact-background">
+
+<div class="Form-Layout">
+
+<div class="contact-container">
+
+<h1 class="logo">Contact Us</h1>
+<h2>Fill in the details below</h2>
+<p>All fields required </p>
+
+<div id="form-success" class="form-success" style="display:none;">
+<p>Message sent successfully!</p>
+</div>
+
+<form id="contact-form">
+
+<h3>First Name:</h3>
+<input type="text" name="first_name" placeholder="First Name" required>
+
+<h3>Last Name:</h3>
+<input type="text" name="last_name" placeholder="Last Name" required>
+
+<h3>Email:</h3>
+<input type="email" name="email" placeholder="Email Address" required>
+
+<h3>Experience:</h3>
+<select name="event_name">
+<option value="">↓ Select an Experience ↓ </option>
+<option value="Loughs Adventure Tour">Loughs Adventure Tour</option>
+<option value="Heritage Walking Tour">Heritage Walking Tour</option>
+<option value="Island Exploration">Island Exploration</option>
+<option value="Cultural Immersion Experience">Cultural Immersion Experience</option>
+</select>
+
+<h3>Your Enquiry:</h3>
+<textarea name="enquiry" placeholder="Write your enquiry here..." required></textarea>
+
+<button class="Form-Button" type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Loughs & Legends | Northern Ireland Tourism | Developed by Project Space SERC</p>
+   <p>Follow our social medias</p>
+
+<div class="social-icons">
+<a href="https://www.instagram.com/visitardsandnorthdown/?hl=en" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.youtube.com/channel/UCVcqgixN8hAGP4qSfaJ_qGg" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://www.facebook.com/visitardsandnorthdown" target="_blank">
+<i class="fa-brands fa-facebook"></i>
+</a>
+</div>
+  <div class="footer-admin">
+        <a href="login.html" class="admin-link" title="Admin Login">
+            <i class="fa-solid fa-user"></i>
+            <span>Admin Login</span>
+        </a>
+    </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const overlay = document.getElementById("navOverlay");
+
+    nav.classList.toggle("active");
+    overlay.classList.toggle("active");
+}
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Simulate form submission
+    document.getElementById('form-success').style.display = 'block';
+    this.reset();
+});
+</script>
+
+</body>
+</html>

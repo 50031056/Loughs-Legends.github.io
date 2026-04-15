@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Loughs & Legends - Members</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="Images/Logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* MEMBERS GRID */
+
+.Member-Container{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1000px;
+margin:40px auto;
+}
+
+/* MEMBER CARD */
+
+.Member-Card{
+background:#1da6a0;
+border-radius:12px;
+padding:20px;
+text-align:center;
+cursor:pointer;
+box-shadow:0 4px 6px rgba(0,0,0,0.1);
+transition:transform .2s;
+}
+
+.Member-Card:hover{
+transform:scale(1.05);
+}
+
+.Member-Image{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.Member-Card h3{
+color:white;
+margin-bottom:10px;
+}
+
+.Member-Short{
+background:#0d5552;
+padding:10px;
+border-radius:6px;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+    <a href="index.html">
+        <img src="Images/Logo.png" class="logo-img" width="150">
+    </a>
+
+    <div class="logo">Loughs & Legends</div>
+
+<button class="burger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+</button>
+
+   <!-- DESKTOP ADMIN -->
+  <div class="admin-desktop">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</header>
+
+<!-- NAV -->
+
+<!-- NAVIGATION -->
+<nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Itineraries</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+
+     <!-- MOBILE ADMIN -->
+   <div class="mobile-admin">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</nav>
+
+<!-- OVERLAY -->
+<div id="navOverlay" onclick="toggleMenu()"></div>
+
+<main>
+
+<h2 style="text-align:center;margin-top:30px;">Our Members</h2>
+
+<div class="Events-Controls" style="text-align:center;margin:18px 0;">
+ <button id="sort-duration" style="padding:6px 10px;">Sort by A - Z</button>
+<br></br>
+</div>
+
+<!-- MEMBER GRID -->
+
+<div class="Member-Container">
+
+<div class="Member-Card"
+    data-id="1"
+    data-name="John Smith"
+    data-image="Images/uploads/member_1772014210.png"
+    data-description="Local historian and tour guide."
+    data-quote="The loughs hold stories that need to be told.">
+
+<img src="Images/uploads/member_1772014210.png" class="Member-Image">
+
+<h3>John Smith</h3>
+
+<div class="Member-Short">
+Local historian and tour guide.
+</div>
+
+</div>
+
+<div class="Member-Card"
+    data-id="2"
+    data-name="Mary Johnson"
+    data-image="Images/uploads/member_1772020071.jpeg"
+    data-description="Environmental educator."
+    data-quote="Protecting our natural heritage for future generations.">
+
+<img src="Images/uploads/member_1772020071.jpeg" class="Member-Image">
+
+<h3>Mary Johnson</h3>
+
+<div class="Member-Short">
+Environmental educator.
+</div>
+
+</div>
+
+<div class="Member-Card"
+    data-id="3"
+    data-name="David Wilson"
+    data-image="Images/uploads/member_1772025852.png"
+    data-description="Adventure sports instructor."
+    data-quote="Experience the thrill of the outdoors.">
+
+<img src="Images/uploads/member_1772025852.png" class="Member-Image">
+
+<h3>David Wilson</h3>
+
+<div class="Member-Short">
+Adventure sports instructor.
+</div>
+
+</div>
+
+<div class="Member-Card"
+    data-id="4"
+    data-name="Sarah Brown"
+    data-image="Images/uploads/member_1772033442.jpg"
+    data-description="Cultural heritage specialist."
+    data-quote="Connecting people with their roots.">
+
+<img src="Images/uploads/member_1772033442.jpg" class="Member-Image">
+
+<h3>Sarah Brown</h3>
+
+<div class="Member-Short">
+Cultural heritage specialist.
+</div>
+
+</div>
+
+<div class="Member-Card"
+    data-id="5"
+    data-name="Michael Davis"
+    data-image="Images/uploads/member_1772531441.png"
+    data-description="Wildlife photographer."
+    data-quote="Capturing the beauty of nature.">
+
+<img src="Images/uploads/member_1772531441.png" class="Member-Image">
+
+<h3>Michael Davis</h3>
+
+<div class="Member-Short">
+Wildlife photographer.
+</div>
+
+</div>
+
+<div class="Member-Card"
+    data-id="6"
+    data-name="Emma Taylor"
+    data-image="Images/uploads/member_1772724625.jpg"
+    data-description="Community outreach coordinator."
+    data-quote="Building stronger communities through shared experiences.">
+
+<img src="Images/uploads/member_1772724625.jpg" class="Member-Image">
+
+<h3>Emma Taylor</h3>
+
+<div class="Member-Short">
+Community outreach coordinator.
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- MEMBER MODAL -->
+<div id="member-modal" class="event-modal" aria-hidden="true">
+
+  <div class="event-modal__overlay" data-close></div>
+
+  <div class="event-modal__content">
+
+    <button class="event-modal__close" aria-label="Close">×</button>
+
+    <!-- Member Name -->
+    <h2 id="modal-name" style="text-align:center; margin-bottom: 12px;"></h2>
+
+    <!-- Member Image -->
+    <img id="modal-image" class="Event-Image" alt="Member Image" style="display:block; margin: 0 auto 20px; max-width:300px; border-radius:12px;">
+
+    <!-- Quote Box -->
+    <h3>Quote:</h3>
+    <div id="modal-quotes" style="
+      background-color:#d9f0ef;
+      color:#043d47;
+      font-size:18px;
+      font-weight:600;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #0f6b63;
+      margin-bottom: 20px;
+      min-height: 80px;
+      overflow-y:auto;
+      box-sizing:border-box;">
+      <!-- Quote content will be injected here -->
+    </div>
+
+    <!-- Description Box -->
+    <h3>Description:</h3>
+    <div id="modal-description" style="
+      background-color: transparent;
+      color: black;
+      font-size: 18px;
+      font-weight:500;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+      min-height: 100px;
+      overflow-y:auto;
+      box-sizing:border-box;">
+      <!-- Description content will be injected here -->
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>© 2026 Loughs & Legends | Northern Ireland Tourism | Developed by Project Space SERC</p>
+   <p>Follow our social medias</p>
+
+<div class="social-icons">
+<a href="https://www.instagram.com/visitardsandnorthdown/?hl=en" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.youtube.com/channel/UCVcqgixN8hAGP4qSfaJ_qGg" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://www.facebook.com/visitardsandnorthdown" target="_blank">
+<i class="fa-brands fa-facebook"></i>
+</a>
+</div>
+ <div class="footer-admin">
+        <a href="login.html" class="admin-link" title="Admin Login">
+            <i class="fa-solid fa-user"></i>
+            <span>Admin Login</span>
+        </a>
+    </div>
+</footer>
+
+<script>
+
+/* MODAL SCRIPT */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const modal = document.getElementById("member-modal");
+  const modalName = document.getElementById("modal-name");
+  const modalImage = document.getElementById("modal-image");
+  const modalQuotes = document.getElementById("modal-quotes");
+  const modalDescription = document.getElementById("modal-description");
+
+  function openModal(card) {
+    modalName.textContent = card.dataset.name;
+    modalImage.src = card.dataset.image;
+    modalQuotes.textContent = card.dataset.quote;
+    modalDescription.textContent = card.dataset.description;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('.Member-Card').forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+  });
+
+  modal.querySelector('[data-close]').addEventListener('click', closeModal);
+  modal.querySelector('.event-modal__close').addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+});
+
+// Sort functionality
+document.getElementById('sort-duration').addEventListener('click', () => {
+  const container = document.querySelector('.Member-Container');
+  const cards = Array.from(container.children);
+  cards.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+  cards.forEach(card => container.appendChild(card));
+});
+
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const overlay = document.getElementById("navOverlay");
+
+    nav.classList.toggle("active");
+    overlay.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

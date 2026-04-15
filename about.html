@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loughs & Legends - About Us</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="Images/Logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+    <a href="index.html">
+        <img src="Images/Logo.png" class="logo-img" width="150">
+    </a>
+
+    <div class="logo">Loughs & Legends</div>
+
+<button class="burger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+</button>
+
+    <!-- DESKTOP ADMIN -->
+  <div class="admin-desktop">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-track"></div>
+    <div class="hero-overlay">
+        <p>— From tide adventures to heritage exploration —</p>
+    </div>
+</section>
+
+<!-- NAV -->
+<nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Itineraries</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+
+    <!-- MOBILE ADMIN -->
+   <div class="mobile-admin">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</nav>
+
+<!-- OVERLAY -->
+<div id="navOverlay" onclick="toggleMenu()"></div>
+
+<!-- INFO SECTION -->
+<section class="info-section">
+<div class="info-container">
+
+<div class="info-headings">
+    <h2>Who We Are</h2>
+    <h2>Our Purpose</h2>
+    <h2>Our Mission</h2>
+</div>
+
+<div class="info-grid">
+
+<div class="card">
+    <div class="about-img">
+        <img src="Images/uploads/event_13_1772634183.jfif" alt="">
+    </div>
+    <p>Loughs & Legends is a tourism initiative focused on showcasing the natural beauty and cultural heritage of Northern Ireland's loughs and surrounding areas.</p>
+</div>
+
+<div class="card">
+    <div class="about-img">
+        <img src="Images/uploads/event_21_1773233042.jfif" alt="">
+    </div>
+    <p>Our purpose is to provide unique, sustainable tourism experiences that connect visitors with the local environment and community.</p>
+    <ul>
+        <li>Educational tours</li>
+        <li>Adventure activities</li>
+        <li>Cultural immersion</li>
+    </ul>
+</div>
+
+<div class="card">
+    <div class="about-img">
+        <img src="Images/uploads/event_29_1774432598.jfif" alt="">
+    </div>
+    <p>Our mission is to promote responsible tourism that preserves natural habitats while creating memorable experiences for all visitors.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimony-section">
+    <h2 style="text-align:center;">Don't just take our word...</h2>
+
+   <div class="testimonial-carousel">
+    <button class="carousel-btn prev">❮</button>
+
+    <div class="carousel-viewport">
+        <div class="testimonial-track">
+            <div class="testimonial-card">
+                <p class="testimonial-message">
+                    "An amazing experience! The guides were knowledgeable and the scenery was breathtaking."
+                </p>
+                <h4 class="testimonial-name">
+                    — John Doe
+                </h4>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-message">
+                    "Loughs & Legends made our trip unforgettable. Highly recommend!"
+                </p>
+                <h4 class="testimonial-name">
+                    — Jane Smith
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-btn next">❯</button>
+</div>
+
+    <h2 style="text-align:center;">... take their word for it!</h2>
+</section>
+
+<h2 style="text-align:center;">Here is our map:</h2>
+<br>
+<iframe 
+    src="https://www.google.com/maps/d/embed?mid=1lq70HNAVJQ5AsiVSFAaHYAF7GSEwA0E&hl=en&ehbc=2E312F"
+    style="width:100%; max-width:640px; height:480px; border: 5px; border-style: solid; border-color: #1f7a6b; display:block; margin:0 auto; border-radius: 15px;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+<br></br>
+
+<footer>
+    <p>© 2026 Loughs & Legends | Northern Ireland Tourism | Developed by Project Space SERC</p>
+   <p>Follow our social medias</p>
+
+<div class="social-icons">
+<a href="https://www.instagram.com/visitardsandnorthdown/?hl=en" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.youtube.com/channel/UCVcqgixN8hAGP4qSfaJ_qGg" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://www.facebook.com/visitardsandnorthdown" target="_blank">
+<i class="fa-brands fa-facebook"></i>
+</a>
+</div>
+  <div class="footer-admin">
+        <a href="login.html" class="admin-link" title="Admin Login">
+            <i class="fa-solid fa-user"></i>
+            <span>Admin Login</span>
+        </a>
+    </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const overlay = document.getElementById("navOverlay");
+
+    nav.classList.toggle("active");
+    overlay.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

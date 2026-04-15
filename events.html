@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loughs & Legends - Itineraries</title>
+
+<link rel="stylesheet" href="style.css?v=1.3">
+<link rel="icon" href="Images/Logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="Images/Logo.png">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+    <a href="index.html">
+        <img src="Images/Logo.png" class="logo-img" width="150">
+    </a>
+
+    <div class="logo">Loughs & Legends</div>
+
+<button class="burger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+</button>
+
+    <!-- DESKTOP ADMIN -->
+  <div class="admin-desktop">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</header>
+
+<!-- NAV -->
+
+<!-- NAVIGATION -->
+<nav class="main-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Itineraries</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+
+   <!-- MOBILE ADMIN -->
+   <div class="mobile-admin">
+    <a href="login.html" class="login-btn">Admin Log In</a>
+</div>
+</nav>
+
+<!-- OVERLAY -->
+<div id="navOverlay" onclick="toggleMenu()"></div>
+
+<main>
+
+<!-- FILTER / SORT CONTROLS -->
+
+<div class="Events-Controls" style="text-align:center;margin:18px 0;">
+
+<label for="filter-duration">Show:</label>
+
+<select id="filter-duration" style="padding:6px 8px;margin:0 8px;">
+<option value="all">All</option>
+<option value="half day">1/2 day</option>
+<option value="full day">full day</option>
+<option value="multi day">multi day</option>
+</select>
+
+<label for="filter-type">Event Type:</label>
+
+<select id="filter-type" style="padding:6px 8px;margin:0 8px;">
+<option value="all">All</option>
+<option value="adventure">Adventure</option>
+<option value="cultural">Cultural</option>
+<option value="nature">Nature</option>
+</select>
+
+<br></br>
+</div>
+
+<!-- EVENTS GRID -->
+<div class="Events-Container" style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+
+    <div class="Event-Card" id="loughs-adventure-tour" data-event-id="1">
+        <h3>Loughs Adventure Tour</h3>
+        <br>
+        <img src="Images/uploads/event_13_1772634183.jfif" class="Event-Image">
+        <div class="Event-Meta" data-duration="full day" data-group="10" data-location="Lough Neagh" data-type="adventure,nature">
+        </div>
+        <div class="Event-Description" style="display:none;">
+            <p>Explore the stunning loughs of Northern Ireland with our expert guides. This full-day adventure includes boat trips, wildlife spotting, and local history.</p>
+        </div>
+        <div class="Event-Preview">
+            <span class="More-Info-Btn">Click for more information</span>
+        </div>
+    </div>
+
+    <div class="Event-Card" id="heritage-walking-tour" data-event-id="2">
+        <h3>Heritage Walking Tour</h3>
+        <br>
+        <img src="Images/uploads/event_21_1773233042.jfif" class="Event-Image">
+        <div class="Event-Meta" data-duration="half day" data-group="15" data-location="Belfast" data-type="cultural">
+        </div>
+        <div class="Event-Description" style="display:none;">
+            <p>Discover the rich heritage of the area through guided walking tours. Learn about local legends and historical sites.</p>
+        </div>
+        <div class="Event-Preview">
+            <span class="More-Info-Btn">Click for more information</span>
+        </div>
+    </div>
+
+    <div class="Event-Card" id="island-exploration" data-event-id="3">
+        <h3>Island Exploration</h3>
+        <br>
+        <img src="Images/uploads/event_29_1774432598.jfif" class="Event-Image">
+        <div class="Event-Meta" data-duration="multi day" data-group="8" data-location="Islands" data-type="adventure,nature">
+        </div>
+        <div class="Event-Description" style="display:none;">
+            <p>A multi-day journey exploring the islands and coastal areas. Includes accommodation and all meals.</p>
+        </div>
+        <div class="Event-Preview">
+            <span class="More-Info-Btn">Click for more information</span>
+        </div>
+    </div>
+
+    <div class="Event-Card" id="cultural-immersion" data-event-id="4">
+        <h3>Cultural Immersion Experience</h3>
+        <br>
+        <img src="Images/uploads/event_30_1774433211.jfif" class="Event-Image">
+        <div class="Event-Meta" data-duration="full day" data-group="12" data-location="Various" data-type="cultural">
+        </div>
+        <div class="Event-Description" style="display:none;">
+            <p>Immerse yourself in the local culture with traditional music, food, and storytelling sessions.</p>
+        </div>
+        <div class="Event-Preview">
+            <span class="More-Info-Btn">Click for more information</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- EVENT MODAL -->
+<div id="event-modal" class="event-modal" aria-hidden="true">
+    <div class="event-modal__overlay" data-close></div>
+    <div class="event-modal__content">
+        <button class="event-modal__close">×</button>
+
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" class="Event-Image">
+
+        <div class="modal-meta">
+            <span id="modal-duration" class="modal-meta__item"></span>
+            <span id="modal-group" class="modal-meta__item"></span>
+            <span id="modal-location" class="modal-meta__item"></span>
+            <span id="modal-type" class="modal-meta__item"></span>
+        </div>
+
+        <h3>Description:</h3>
+        <div id="modal-description"></div>
+
+        <h3 style="text-align:center;">Click to contact:</h3>
+        <div id="contact-button-container">
+            <a href="contact.html?event=" id="contact-btn" class="contact-btn">Click</a>
+        </div>
+    </div>
+</div>
+
+<br><br>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Loughs & Legends | Northern Ireland Tourism | Developed by Project Space SERC</p>
+    <p>Follow our social medias</p>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/visitardsandnorthdown/?hl=en" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/channel/UCVcqgixN8hAGP4qSfaJ_qGg" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://www.facebook.com/visitardsandnorthdown" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+    </div>
+  <div class="footer-admin">
+        <a href="login.html" class="admin-link" title="Admin Login">
+            <i class="fa-solid fa-user"></i>
+            <span>Admin Login</span>
+        </a>
+    </div>
+
+</footer>
+
+<script>
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function(){
+    const modal = document.getElementById('event-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDuration = document.getElementById('modal-duration');
+    const modalGroup = document.getElementById('modal-group');
+    const modalLocation = document.getElementById('modal-location');
+    const modalType = document.getElementById('modal-type');
+    const modalDescription = document.getElementById('modal-description');
+    const contactBtn = document.getElementById('contact-btn');
+
+    function openModal(card){
+        const title = card.querySelector('h3').textContent;
+        const imgEl = card.querySelector('img.Event-Image');
+        const descriptionEl = card.querySelector('.Event-Description');
+        const meta = card.querySelector('.Event-Meta');
+
+        modalTitle.textContent = title;
+        if(imgEl) modalImage.src = imgEl.src;
+        modalDuration.textContent = 'Duration: ' + meta.dataset.duration;
+        modalGroup.textContent = 'Group Size: ' + meta.dataset.group;
+        modalLocation.textContent = 'Location: ' + meta.dataset.location;
+        modalType.textContent = 'Type: ' + meta.dataset.type;
+        modalDescription.innerHTML = descriptionEl.innerHTML;
+        contactBtn.href = "contact.html?event=" + encodeURIComponent(title);
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+    }
+
+    function closeModal(){
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden','true');
+    }
+
+    document.querySelectorAll('.Event-Card').forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+    });
+
+    modal.querySelector('[data-close]').addEventListener('click', closeModal);
+    modal.querySelector('.event-modal__close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+});
+
+// Filter functionality
+document.getElementById('filter-duration').addEventListener('change', filterEvents);
+document.getElementById('filter-type').addEventListener('change', filterEvents);
+
+function filterEvents() {
+    const durationFilter = document.getElementById('filter-duration').value;
+    const typeFilter = document.getElementById('filter-type').value;
+    const cards = document.querySelectorAll('.Event-Card');
+
+    cards.forEach(card => {
+        const meta = card.querySelector('.Event-Meta');
+        const duration = meta.dataset.duration;
+        const type = meta.dataset.type;
+
+        const durationMatch = durationFilter === 'all' || duration === durationFilter;
+        const typeMatch = typeFilter === 'all' || type.includes(typeFilter);
+
+        if (durationMatch && typeMatch) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const overlay = document.getElementById("navOverlay");
+
+    nav.classList.toggle("active");
+    overlay.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
