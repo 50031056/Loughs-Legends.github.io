@@ -629,7 +629,8 @@ body {
 {
     display: block;
     margin: auto;
-    width: 400px;
+    width: 100%;
+    max-width: 1240px;
     height: auto;
 }
 .Center-Text
