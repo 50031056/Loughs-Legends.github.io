@@ -23,6 +23,20 @@ max-width:1000px;
 margin:40px auto;
 }
 
+/* Responsive: 2 columns on tablets and mobile */
+@media (max-width: 768px) {
+  .Member-Container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 column on small mobile */
+@media (max-width: 480px) {
+  .Member-Container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* MEMBER CARD */
 
 .Member-Card{
